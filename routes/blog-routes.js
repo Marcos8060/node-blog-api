@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { getAllBlogs,addBlog,deleteBlog,getSingleBlog, updateBlog } = require("../controllers/blog-controller")
-const { addComment } = require("../controllers/comment-controller")
+const { addComment,deleteComment } = require("../controllers/comment-controller")
 
 
 router.get('/blogs', getAllBlogs)
@@ -12,6 +12,7 @@ router.put('/blogs/:id', updateBlog)
 
 // comment routes 
 router.post('/add-comment/:blogId', addComment)
+router.delete('/delete-comment/:id', deleteComment)
 
 
 module.exports = router;
